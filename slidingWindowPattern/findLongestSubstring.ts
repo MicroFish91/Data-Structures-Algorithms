@@ -4,50 +4,24 @@
  * characters.
  */
 function findLongestSubstring(phrase: string): number {
-  let maxLength = 1;
-  let leftPointer = 0;
-  let rightPointer = 0;
-  let leftChar = "";
-  let rightChar = "";
-  let shouldMoveRight = true;
-  let charMap: { [char: string]: number } = {};
+  let start = 0;
+  let maxLength = 0;
+  const charLocation: { [char: string]: number } = {};
 
   if (!phrase.length) {
     return 0;
   }
 
-  charMap[phrase[0]] = 1;
+  for (let i = 0; i < phrase.length; i++) {
+    const currentChar = phrase[i];
 
-  while (true) {
-    if (shouldMoveRight) {
-      rightPointer++;
-
-      if (rightPointer === phrase.length) {
-        break;
-      }
-
-      rightChar = phrase[rightPointer];
-
-      if (charMap[rightChar]) {
-        shouldMoveRight = false;
-      } else {
-        charMap[rightChar] = 1;
-        maxLength = Math.max(maxLength, rightPointer - leftPointer + 1);
-      }
-    } else {
-      leftChar = phrase[leftPointer];
-
-      while (leftChar !== rightChar) {
-        delete charMap[phrase[leftPointer]];
-        leftPointer++;
-        leftChar = phrase[leftPointer];
-      }
-
-      leftPointer++;
-      leftChar = "";
-
-      shouldMoveRight = true;
+    if (charLocation[currentChar] !== undefined) {
+      start = Math.max(start, charLocation[currentChar]);
     }
+
+    maxLength = Math.max(maxLength, i - start + 1);
+
+    charLocation[currentChar] = i + 1;
   }
 
   return maxLength;
