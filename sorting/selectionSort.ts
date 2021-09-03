@@ -2,6 +2,7 @@
  * In bubble sort, the largest value will bubble to the top (end of the array).  Because
  * of this, we do not need to run through to the very end of the array each time.
  * After each pass we can reduce the length of the for loop by 1.
+ * With selection sort we only do one swap per pass.
  */
 function selectionSort(numList: number[]): number[] {
   let smallestIndex;
