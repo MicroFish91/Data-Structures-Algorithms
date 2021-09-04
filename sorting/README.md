@@ -8,6 +8,20 @@ Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorith
 | --------------- | :--: | :-----------: | :-----------: | :----: |
 | **Bubble sort** |  n   | n<sup>2</sup> | n<sup>2</sup> |   1    |
 
+## Insertion Sort
+
+Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. However, insertion sort provides several advantages:
+
+- Efficient for (quite) small data sets, much like other quadratic sorting algorithms
+- More efficient in practice than most other simple quadratic (i.e., O(n2)) algorithms such as selection sort or bubble sort
+- Efficient for data sets that are already substantially sorted
+
+![Insert Sort Visual](https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif)
+
+| Name               | Best |    Average    |     Worst     | Memory |
+| ------------------ | :--: | :-----------: | :-----------: | :----: |
+| **Insertion sort** |  n   | n<sup>2</sup> | n<sup>2</sup> |   1    |
+
 ## Selection Sort
 
 Selection sort is an in-place comparison sorting algorithm. It has an O(n2) time complexity, which makes it inefficient on large lists, and generally performs worse than the similar insertion sort. Selection sort is noted for its simplicity and has performance advantages over more complicated algorithms in certain situations, particularly where auxiliary memory is limited.
