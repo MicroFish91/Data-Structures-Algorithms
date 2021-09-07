@@ -17,3 +17,26 @@ n + n/2 + n/4 + n/8 .... approaches at most 2n => so at any given time we have a
 | Name           |     Best      |    Average    |     Worst     | Memory |
 | -------------- | :-----------: | :-----------: | :-----------: | :----: |
 | **Merge sort** | n&nbsp;log(n) | n&nbsp;log(n) | n&nbsp;log(n) |   n    |
+
+## Quick Sort
+
+QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around this value. There are many different versions of quickSort that pick pivot in different ways.
+
+- Always pick first element as pivot.
+- Always pick last element as pivot (implemented below)
+- Pick a random element as pivot.
+- Pick median as pivot.
+
+The key process in quickSort is pivot() or partition(). Given an array and an element x of array as pivot, put x at its correct position in sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.
+
+Quicksort is usually done in-place with O(log(n)) stack space
+
+Best case we have log(n) divisions, with O(n) partitions per level.
+
+Worst case (if we continually choose the minimum or maximum value), we have n partitions, with O(n) partitions per level.
+
+![Quick Sort Visual](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+
+| Name           |     Best      |    Average    |     Worst     | Memory |
+| -------------- | :-----------: | :-----------: | :-----------: | :----: |
+| **Quick sort** | n&nbsp;log(n) | n&nbsp;log(n) | n<sup>2</sup> | log(n) |
