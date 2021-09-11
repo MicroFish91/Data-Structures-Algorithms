@@ -23,8 +23,8 @@ class NodeProto {
 }
 
 class SinglyLinkedList {
-  public head: NodeProto;
-  public tail: NodeProto;
+  public head: NodeProtoType;
+  public tail: NodeProtoType;
   public length: number;
 
   constructor() {
@@ -46,7 +46,7 @@ class SinglyLinkedList {
     this.length++;
   }
 
-  pop(): NodeProto {
+  pop(): NodeProtoType {
     let current = this.head;
     let pre = null;
 
@@ -72,19 +72,23 @@ class SinglyLinkedList {
 
     return current;
   }
+
+  shift(): NodeProtoType {
+    if (this.length === 1) {
+      this.tail = null;
+    }
+
+    const front = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return front;
+  }
 }
 
 let singlyLinkedList = new SinglyLinkedList();
 singlyLinkedList.push(1);
 singlyLinkedList.push(2);
-singlyLinkedList.push(3);
-singlyLinkedList.push(4);
 
-console.log(singlyLinkedList);
-
-console.log(singlyLinkedList.pop());
-console.log(singlyLinkedList.pop());
-console.log(singlyLinkedList.pop());
-console.log(singlyLinkedList.pop());
-
+console.log(singlyLinkedList.shift());
+console.log(singlyLinkedList.shift());
 console.log(singlyLinkedList);
