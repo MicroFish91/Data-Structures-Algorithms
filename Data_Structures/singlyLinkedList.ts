@@ -7,7 +7,7 @@ interface NodeProtoType {
 interface SinglyLinkedListType {
   head: NodeProtoType;
   tail: NodeProtoType;
-  val: any;
+  length: number;
 }
 
 // Starts here
@@ -74,6 +74,10 @@ class SinglyLinkedList {
   }
 
   shift(): NodeProtoType {
+    if (this.length === 0) {
+      return undefined;
+    }
+
     if (this.length === 1) {
       this.tail = null;
     }
@@ -83,12 +87,54 @@ class SinglyLinkedList {
     this.length--;
     return front;
   }
+
+  unshift(val: any): SinglyLinkedListType {
+    const newNode = new NodeProto(val);
+    const front = this.head;
+
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+      this.length++;
+      return this;
+    }
+
+    this.head = newNode;
+    this.head.next = front;
+    this.length++;
+    return this;
+  }
+
+  get(index: number): any {
+    let current = this.head;
+
+    if (index < 0 || index > this.length - 1) {
+      return null;
+    }
+
+    for (let i = 0; i < index; i++) {
+      current = current.next;
+    }
+
+    return current;
+  }
+
+  set(index: number, val: any): boolean {
+    const updateNode = this.get(index);
+
+    if (!updateNode) {
+      return false;
+    }
+
+    updateNode.val = val;
+    return true;
+  }
 }
 
 let singlyLinkedList = new SinglyLinkedList();
 singlyLinkedList.push(1);
 singlyLinkedList.push(2);
+singlyLinkedList.push(3);
 
-console.log(singlyLinkedList.shift());
-console.log(singlyLinkedList.shift());
+singlyLinkedList.set(1, "yo");
 console.log(singlyLinkedList);
