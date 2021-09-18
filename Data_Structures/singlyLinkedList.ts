@@ -105,7 +105,7 @@ class SinglyLinkedList {
     return this;
   }
 
-  get(index: number): any {
+  get(index: number): NodeProtoType {
     let current = this.head;
 
     if (index < 0 || index > this.length - 1) {
@@ -129,6 +129,31 @@ class SinglyLinkedList {
     updateNode.val = val;
     return true;
   }
+
+  insert(index: number, val: any): boolean {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === 0) {
+      this.unshift(val);
+      return true;
+    }
+
+    if (index === this.length) {
+      this.push(val);
+      return true;
+    }
+
+    const newNode = new NodeProto(val);
+    const nodeBefore = this.get(index - 1);
+    const nodeAfter = nodeBefore.next;
+    newNode.next = nodeAfter;
+    nodeBefore.next = newNode;
+    this.length++;
+
+    return true;
+  }
 }
 
 let singlyLinkedList = new SinglyLinkedList();
@@ -136,5 +161,6 @@ singlyLinkedList.push(1);
 singlyLinkedList.push(2);
 singlyLinkedList.push(3);
 
-singlyLinkedList.set(1, "yo");
+singlyLinkedList.insert(3, 5);
+
 console.log(singlyLinkedList);
