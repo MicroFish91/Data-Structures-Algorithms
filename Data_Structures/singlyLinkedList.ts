@@ -12,8 +12,8 @@ interface SinglyLinkedListType {
 
 // Starts here
 
-class NodeProto {
-  public val: number;
+class NodeProtoType {
+  public val: any;
   public next: NodeProtoType;
 
   constructor(val: any) {
@@ -34,7 +34,7 @@ class SinglyLinkedList {
   }
 
   push(val: any): void {
-    const newNode = new NodeProto(val);
+    const newNode = new NodeProtoType(val);
 
     if (this.length === 0) {
       this.head = newNode;
@@ -89,7 +89,7 @@ class SinglyLinkedList {
   }
 
   unshift(val: any): SinglyLinkedListType {
-    const newNode = new NodeProto(val);
+    const newNode = new NodeProtoType(val);
     const front = this.head;
 
     if (this.length === 0) {
@@ -145,7 +145,7 @@ class SinglyLinkedList {
       return true;
     }
 
-    const newNode = new NodeProto(val);
+    const newNode = new NodeProtoType(val);
     const nodeBefore = this.get(index - 1);
     const nodeAfter = nodeBefore.next;
     newNode.next = nodeAfter;
