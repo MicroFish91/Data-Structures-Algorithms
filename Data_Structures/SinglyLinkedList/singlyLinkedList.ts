@@ -33,6 +33,8 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
+  // Description: Place value at end of linked list
+  // Input: any value, Output: none or length
   push(val: any): void {
     const newNode = new NodeProtoType(val);
 
@@ -46,6 +48,8 @@ class SinglyLinkedList {
     this.length++;
   }
 
+  // Description pops off the node at the end of the linked list
+  // Input: None, Output: Return popped node's value | undefined
   pop(): NodeProtoType {
     let current = this.head;
     let pre = null;
@@ -58,7 +62,7 @@ class SinglyLinkedList {
       this.head = null;
       this.tail = null;
       this.length--;
-      return current;
+      return current.val;
     }
 
     while (current.next) {
@@ -70,9 +74,11 @@ class SinglyLinkedList {
     this.tail.next = null;
     this.length--;
 
-    return current;
+    return current.val;
   }
 
+  // Description: Removes the first node and returns that removed node
+  // Input: None, Output: current node at head
   shift(): NodeProtoType {
     if (this.length === 0) {
       return undefined;
@@ -88,6 +94,8 @@ class SinglyLinkedList {
     return front;
   }
 
+  // Description: add a value to the front of the linkedList
+  // Input: any value, Output: returns the updated linkedList
   unshift(val: any): SinglyLinkedListType {
     const newNode = new NodeProtoType(val);
     const front = this.head;
@@ -105,6 +113,8 @@ class SinglyLinkedList {
     return this;
   }
 
+  // Description: See what node occupies the current index
+  // Input: index number, Output: Node
   get(index: number): NodeProtoType {
     let current = this.head;
 
@@ -119,6 +129,8 @@ class SinglyLinkedList {
     return current;
   }
 
+  // Description: Update the value of an existing node
+  // Input: (index number, new value); Output: true or false
   set(index: number, val: any): boolean {
     const updateNode = this.get(index);
 
@@ -130,6 +142,8 @@ class SinglyLinkedList {
     return true;
   }
 
+  // Description: Inserts the inputted value as a node at the target index
+  // Input: (index number, any value), Output: true or false
   insert(index: number, val: any): boolean {
     if (index < 0 || index > this.length) {
       return false;
@@ -154,13 +168,8 @@ class SinglyLinkedList {
 
     return true;
   }
+
+  // Description: Removes the node at the target index
+  // Input: index number, Output: Node
+  remove(index: number, val: any): any {}
 }
-
-let singlyLinkedList = new SinglyLinkedList();
-singlyLinkedList.push(1);
-singlyLinkedList.push(2);
-singlyLinkedList.push(3);
-
-singlyLinkedList.insert(3, 5);
-
-console.log(singlyLinkedList);
