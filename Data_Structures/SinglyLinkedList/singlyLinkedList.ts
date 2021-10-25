@@ -171,5 +171,24 @@ class SinglyLinkedList {
 
   // Description: Removes the node at the target index
   // Input: index number, Output: Node
-  remove(index: number, val: any): any {}
+  remove(index: number): any {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    }
+    if (index === 0) {
+      return this.shift();
+    }
+    if (index === this.length - 1) {
+      return this.pop();
+    }
+
+    const pre = this.get(index - 1);
+    const removed = pre.next;
+    const next = removed.next;
+
+    pre.next = next;
+    this.length--;
+
+    return removed.val;
+  }
 }
