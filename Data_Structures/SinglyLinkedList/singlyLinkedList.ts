@@ -191,4 +191,49 @@ class SinglyLinkedList {
 
     return removed.val;
   }
+
+  // reverse(): SinglyLinkedListType {
+  //   if (this.length === 0) {
+  //     return this;
+  //   }
+
+  //   [this.tail, this.head] = [this.head, this.tail];
+
+  //   // Initial conditions
+  //   let current = this.tail;
+  //   let prev = null;
+  //   let next = current.next;
+  //   current.next = prev;
+
+  //   while (next !== null) {
+  //     prev = current;
+  //     current = next;
+  //     next = current.next;
+  //     current.next = prev;
+  //   }
+
+  //   return this;
+  // }
+
+  reverse(): SinglyLinkedListType {
+    [this.tail, this.head] = [this.head, this.tail];
+
+    // Initial conditions
+    let current = this.tail;
+    let prev = null;
+    let next;
+
+    for (let i = 0; i < this.length; i++) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+
+    return this;
+  }
 }
+
+const linkedList = new SinglyLinkedList();
+
+console.log(linkedList.reverse());

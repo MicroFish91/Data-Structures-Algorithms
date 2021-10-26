@@ -179,3 +179,13 @@ Base:
 | Name   | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ------ | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | remove | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
+
+# reverse()
+
+Reverse a Linked List in place.
+
+| Name    | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ------- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
+| reverse | O(n) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
+
+![SLL Reverse Visual](https://i.giphy.com/media/d9TdpWRIDu9CXONF8P/giphy.gif)
