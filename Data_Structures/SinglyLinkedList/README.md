@@ -6,6 +6,17 @@ Each element in a linked list is called a node. A single node contains data and 
 
 ## Table of Contents
 
+1. [LL-vs-Arr](#Linked-List-vs-Array)
+2. [.push()](#push)
+3. [.pop()](#pop)
+4. [.shift()](#shift)
+5. [.unshift()](#unshift)
+6. [.get()](#get)
+7. [.set()](#set)
+8. [.insert()](#insert)
+9. [.remove()](#remove)
+10. [.reverse()](#reverse)
+
 ## Linked List vs Array
 
 Arrays store elements in contiguous memory locations, resulting in easily calculable addresses for the elements stored and this allows faster access to an element at a specific index. Linked lists are less rigid in their storage structure and elements are usually not stored in contiguous locations, hence they need to be stored with additional tags giving a reference to the next element.
@@ -23,7 +34,7 @@ Linked lists have the following drawbacks:
 4. It takes a lot of time in traversing and changing the pointers.
 5. It will be confusing when we work with pointers.
 
-## .push()
+## push()
 
 Insert a node to the end of the list.
 
@@ -41,7 +52,7 @@ Base:
 | ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | push | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
 
-## .pop()
+## pop()
 
 Remove a node from the end of the list
 
@@ -63,7 +74,7 @@ Base:
 | ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | pop  | O(n) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
 
-## .shift()
+## shift()
 
 Removes the first node and returns that removed node's value
 
@@ -84,7 +95,7 @@ Base:
 | ----- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | shift | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
 
-## .unshift()
+## unshift()
 
 Add a value to the front of the Linked List
 
@@ -106,7 +117,7 @@ Base:
 | ------- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | unshift | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
 
-## .get()
+## get()
 
 Retrieve a node by its position (index) in the Linked List
 
@@ -125,7 +136,7 @@ Base:
 | ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | get  | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
 
-## .set()
+## set()
 
 Change the value of a node based on it's position (index)
 
@@ -137,7 +148,7 @@ Change the value of a node based on it's position (index)
 | ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | set  | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
 
-## .insert()
+## insert()
 
 Add a node at a specific position (index)
 
@@ -159,7 +170,7 @@ Base:
 | ------ | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | insert | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
 
-## .remove()
+## remove()
 
 Remove a node from a specific position (index)
 
@@ -180,7 +191,7 @@ Base:
 | ------ | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | remove | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
 
-# reverse()
+## reverse()
 
 Reverse a Linked List in place.
 
