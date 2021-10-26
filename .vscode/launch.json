@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\out\\Data_Structures\\singlyLinkedList.js",
+      "program": "${workspaceFolder}\\out\\Data_Structures\\SinglyLinkedList\\singlyLinkedList.js",
       "outFiles": ["${workspaceFolder}/out/**/*.js"]
     }
   ]
