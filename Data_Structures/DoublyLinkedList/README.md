@@ -46,3 +46,24 @@ Base:
 | Name | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | pop  | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
+
+## shift()
+
+Removes the first node and returns that removed node's value
+
+Edgecase:
+
+- If the head property is null (length = 0), return undefined
+- If the length is 1, set head & tail to null, decrement length, return node's value
+
+Base:
+
+- Store the current head in a variable to return later
+- Update the head to be the next of the old head
+- Set the head's prev property to null
+- Decrement the length
+- Return the old head's value
+
+| Name  | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ----- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
+| shift | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
