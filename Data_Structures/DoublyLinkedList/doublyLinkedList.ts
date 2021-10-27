@@ -105,4 +105,42 @@ class DoublyLinkedList {
 
     return ++this.length;
   }
+
+  // 0 - 0 - 0 - 0 - 0
+  // 0 - 0 - 0 - 0
+
+  get(index: number): NodeProtoType {
+    if (index < 0 || index >= this.length) return undefined;
+
+    if (index < this.length / 2) {
+      let counter = 0;
+      let start = this.head;
+
+      while (counter !== index) {
+        start = start.next;
+        counter++;
+      }
+
+      return start;
+    } else {
+      let counter = this.length - 1;
+      let start = this.tail;
+
+      while (counter !== index) {
+        start = start.prev;
+        counter--;
+      }
+
+      return start;
+    }
+  }
 }
+
+const dll = new DoublyLinkedList();
+
+dll.push(1);
+dll.push(2);
+dll.push(3);
+dll.push(4);
+
+console.log(dll.get(0));

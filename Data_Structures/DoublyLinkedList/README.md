@@ -87,3 +87,24 @@ Base:
 | Name    | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ------- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | unshift | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
+
+## get() \*
+
+Retrieve a node from the Linked List
+
+Edgecase:
+
+- If the index is less than 0 or greater than or equal to the length, return undefined
+
+Base:
+
+- If the index is less than or equal to half the length:
+  - Loop through the list starting from the head towards the middle
+  - Return node when found
+- If the index is greater than half the length of the list:
+  - Loop through the list starting from the tail towards the middle
+  - Return node when found
+
+| Name | Best |  Average   |   Worst    | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ---- | :--: | :--------: | :--------: | :---------------------: | :---------------------: |
+| get  | O(1) | O(n) (n/2) | O(n) (n/2) |          O(1)           |          O(n)           |
