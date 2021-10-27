@@ -70,7 +70,7 @@ class DoublyLinkedList {
     return current.val;
   }
 
-  shift() {
+  shift(): any {
     if (this.length === 0) {
       return undefined;
     }
@@ -88,5 +88,21 @@ class DoublyLinkedList {
     current.prev = null;
     this.length--;
     return current.val;
+  }
+
+  unshift(val: any): number {
+    const newNode = new NodeProto(val);
+
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+      return ++this.length;
+    }
+
+    newNode.next = this.head;
+    this.head.prev = newNode;
+    this.head = newNode;
+
+    return ++this.length;
   }
 }

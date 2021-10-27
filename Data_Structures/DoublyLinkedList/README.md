@@ -67,3 +67,23 @@ Base:
 | Name  | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ----- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | shift | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
+
+## unshift()
+
+Add a value to the front of the Linked List
+
+Edgecase:
+
+- If length = 0, set head and tail to be the new node
+
+Base:
+
+- Create a new node with the value passed to the function
+- Set the prev property on the head to be the new node
+- Set the new node's next to be the head of the list
+- Update the head to be the new node
+- Increment and return the length
+
+| Name    | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ------- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
+| unshift | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
