@@ -106,9 +106,6 @@ class DoublyLinkedList {
     return ++this.length;
   }
 
-  // 0 - 0 - 0 - 0 - 0
-  // 0 - 0 - 0 - 0
-
   get(index: number): NodeProtoType {
     if (index < 0 || index >= this.length) return undefined;
 
@@ -134,13 +131,11 @@ class DoublyLinkedList {
       return start;
     }
   }
+
+  set(val: any, index: number): boolean {
+    const getNode = this.get(index);
+    if (!getNode) return false;
+    getNode.val = val;
+    return true;
+  }
 }
-
-const dll = new DoublyLinkedList();
-
-dll.push(1);
-dll.push(2);
-dll.push(3);
-dll.push(4);
-
-console.log(dll.get(0));

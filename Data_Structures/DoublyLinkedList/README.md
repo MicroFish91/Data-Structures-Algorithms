@@ -90,7 +90,7 @@ Base:
 
 ## get() \*
 
-Retrieve a node from the Linked List
+Retrieve a node from the Linked List based on its position (index)
 
 Edgecase:
 
@@ -108,3 +108,21 @@ Base:
 | Name | Best |  Average   |   Worst    | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ---- | :--: | :--------: | :--------: | :---------------------: | :---------------------: |
 | get  | O(1) | O(n) (n/2) | O(n) (n/2) |          O(1)           |          O(n)           |
+
+## set() \*
+
+Change the value of a node based on it's position (index), return boolean
+
+Edgecase:
+
+- If get returns undefined, return false
+
+Base:
+
+- Create a variable that is the result of the get method at the index passed
+- If a value is returned, update the node's value with the value passed
+- Return true
+
+| Name | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
+| set  | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
