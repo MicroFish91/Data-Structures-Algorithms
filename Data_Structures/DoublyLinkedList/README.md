@@ -25,3 +25,24 @@ Base:
 | Name | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | push | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |
+
+## pop()
+
+Remove a node from the end of the list.
+
+Edgecase:
+
+- If the head property is null (length = 0), return undefined
+- If the length is 1, set the head and the tail to be null
+
+Base:
+
+- Store the current tail in a variable to return later
+- Update the tail to be the previous node
+- Set the new tail's next to null
+- Decrement the length
+- Return the value removed
+
+| Name | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ---- | :--: | :-----: | :---: | :---------------------: | :---------------------: |
+| pop  | O(1) |  O(1)   | O(1)  |          O(1)           |          O(n)           |

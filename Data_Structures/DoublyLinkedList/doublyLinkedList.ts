@@ -49,4 +49,24 @@ class DoublyLinkedList {
     prev.next = this.tail;
     return ++this.length;
   }
+
+  pop(): any {
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    const current = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      const { prev } = this.tail;
+      prev.next = null;
+      this.tail = prev;
+    }
+
+    this.length--;
+    return current.val;
+  }
 }
