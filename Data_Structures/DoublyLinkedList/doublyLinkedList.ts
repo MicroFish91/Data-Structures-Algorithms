@@ -1,7 +1,7 @@
-interface NodoProtoType {
+interface NodeProtoType {
   val: any;
   next: NodeProtoType;
-  previous: NodeProtoType;
+  prev: NodeProtoType;
 }
 
 interface DoublyLinkedListType {
@@ -32,5 +32,21 @@ class DoublyLinkedList {
     this.head = null;
     this.tail = null;
     this.length = 0;
+  }
+
+  push(val: any): number {
+    const newNode = new NodeProto(val);
+
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+      return ++this.length;
+    }
+
+    const prev = this.tail;
+    newNode.prev = prev;
+    this.tail = newNode;
+    prev.next = this.tail;
+    return ++this.length;
   }
 }
