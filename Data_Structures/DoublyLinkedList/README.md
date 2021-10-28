@@ -147,3 +147,25 @@ Base:
 | Name   | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ------ | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | insert | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
+
+## remove() \*
+
+Remove a node at a specific position (index)
+
+Edgecases:
+
+- If the index is less than 0 or greater than or equal to the length, return undefined
+- If the index is 0, shift()
+- If the index is equal to the length - 1, pop()
+
+Base:
+
+- Use get the method to retrieve the node at that index
+- Store the previous and next values
+- Set previous.next to next and next.prev to previous
+- Decrement the length
+- Return the removed node's value
+
+| Name   | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ------ | :--: | :-----: | :---: | :---------------------: | :---------------------: |
+| remove | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
