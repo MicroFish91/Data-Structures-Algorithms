@@ -8,7 +8,7 @@ interface NodeProtoType {
   val: any;
   next: NodeProtoType;
 }
-
+//@ts-ignore
 class NodeProto {
   public val: any;
   public next: NodeProtoType;

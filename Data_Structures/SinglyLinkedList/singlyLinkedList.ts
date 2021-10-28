@@ -8,6 +8,7 @@ interface SinglyLinkedListType {
   head: NodeProtoType;
   tail: NodeProtoType;
   length: number;
+  print(): void;
 }
 
 // Starts here
@@ -22,7 +23,7 @@ class NodeProtoType {
   }
 }
 
-class SinglyLinkedList {
+export class SinglyLinkedList {
   public head: NodeProtoType;
   public tail: NodeProtoType;
   public length: number;
@@ -232,8 +233,16 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  print(): void {
+    const list = [];
+    let current = this.head;
+
+    while (current !== null) {
+      list.push(current.val);
+      current = current.next;
+    }
+
+    console.log(list);
+  }
 }
-
-const linkedList = new SinglyLinkedList();
-
-console.log(linkedList.reverse());

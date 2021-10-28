@@ -169,3 +169,11 @@ Base:
 | Name   | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
 | ------ | :--: | :-----: | :---: | :---------------------: | :---------------------: |
 | remove | O(1) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
+
+## reverse() \*
+
+Reverse the Linked List in place.
+
+| Name   | Best | Average | Worst | Space Complexity (Aux.) | Space Complexity (Gen.) |
+| ------ | :--: | :-----: | :---: | :---------------------: | :---------------------: |
+| remove | O(n) |  O(n)   | O(n)  |          O(1)           |          O(n)           |
