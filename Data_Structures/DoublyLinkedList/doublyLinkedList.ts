@@ -138,4 +138,33 @@ class DoublyLinkedList {
     getNode.val = val;
     return true;
   }
+
+  insert(val: any, index: number): boolean {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === 0) {
+      this.unshift(val);
+      return true;
+    }
+
+    if (index === this.length) {
+      this.push(val);
+      return true;
+    }
+
+    const newNode = new NodeProto(val);
+    const prevNode = this.get(index - 1);
+    const nextNode = prevNode.next;
+
+    prevNode.next = newNode;
+    nextNode.prev = newNode;
+    newNode.prev = prevNode;
+    newNode.next = nextNode;
+
+    this.length++;
+
+    return true;
+  }
 }
