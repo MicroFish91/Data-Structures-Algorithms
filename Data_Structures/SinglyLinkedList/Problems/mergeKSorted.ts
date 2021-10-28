@@ -16,6 +16,7 @@ function mergeList(starterList) {
     }
   }
   starterList[0].print();
+  return starterList[0];
 }
 
 function mergeTwo(
