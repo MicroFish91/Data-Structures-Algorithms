@@ -6,6 +6,24 @@ Each element in a linked list is called a node. A single node contains data and 
 
 ## Table of Contents
 
+1. [SLL-vs-DLL](#SLL-vs-DLL)
+2. [.push()](#push)
+3. [.pop()](#pop)
+4. [.shift()](#shift)
+5. [.unshift()](#unshift)
+6. [.get()](#get)
+7. [.set()](#set)
+8. [.insert()](#insert)
+9. [.remove()](#remove)
+10. [.reverse()](#reverse)
+
+## SLL vs DLL
+
+- SLL: Insertion - O(1), Removal - O(1) or O(n), Searching - O(n), Access - O(n)
+- DLL: Insertion - O(1), Removal - O(1), Searching - O(n), Access - O(n) ( O(n/2) )
+
+DLL requires more overhead but offers more flexibility and certain operations may be faster when compared to a SLL. Some of the same operations may be more difficult to implement on a DLL because you must also maintain both directions rather than just one.
+
 ## push()
 
 Insert a node to the end of the list.
