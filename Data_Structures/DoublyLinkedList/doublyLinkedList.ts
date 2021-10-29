@@ -192,4 +192,33 @@ class DoublyLinkedList {
 
     return removedNode.val;
   }
+
+  reverse(): DoublyLinkedList {
+    if (this.length <= 1) return this;
+
+    let current = this.head;
+    let next;
+
+    while (current !== null) {
+      next = current.next;
+      [current.next, current.prev] = [current.prev, current.next];
+      current = next;
+    }
+
+    [this.head, this.tail] = [this.tail, this.head];
+
+    return this;
+  }
+
+  print(): void {
+    const list = [];
+    let current = this.head;
+
+    while (current !== null) {
+      list.push(current.val);
+      current = current.next;
+    }
+
+    console.log(list);
+  }
 }
