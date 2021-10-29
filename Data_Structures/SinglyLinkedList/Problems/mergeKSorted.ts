@@ -23,9 +23,14 @@ function mergeTwo(
   sllOne: SinglyLinkedList,
   sllTwo: SinglyLinkedList
 ): SinglyLinkedList {
-  const sllList = [sllOne, sllTwo];
-  let nodeOne, nodeTwo, currentList, otherList;
+  // Edge cases
+  if (sllOne.length === 0) return sllTwo;
+  if (sllTwo.length === 0) return sllOne;
 
+  let nodeOne, nodeTwo, currentList, otherList;
+  const sllList = [sllOne, sllTwo];
+
+  // Choose which list to merge in-place
   if (sllOne.head.val < sllTwo.head.val) {
     nodeOne = sllOne.head;
     nodeTwo = sllTwo.head;
@@ -52,6 +57,7 @@ function mergeTwo(
         nodeOne.next = tempCurrent;
         tempCurrent.next = tempNext;
         nodeOne = nodeOne.next;
+
         sllList[currentList].length++;
         sllList[otherList].length--;
       } else {
