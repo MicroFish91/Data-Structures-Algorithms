@@ -28,35 +28,29 @@ class Stack {
 
     if (this.top === null) {
       this.top = newElement;
-      this.bottom = newElement;
-      return ++this.length;
+      this.bottom = this.top;
+    } else {
+      newElement.next = this.top;
+      this.top = newElement;
     }
-
-    const originalTop = this.top;
-    this.top = newElement;
-    this.top.next = originalTop;
 
     return ++this.length;
   }
 
   pop(): any {
-    if (this.top === null) {
-      return undefined;
-    }
+    const topNode = this.top;
 
-    const returnNode = this.top;
+    if (!this.top) return undefined;
 
-    if (this.length === 1) {
+    if (this.top === this.bottom) {
       this.top = null;
       this.bottom = null;
-      this.length--;
-      return returnNode.val;
+    } else {
+      this.top = this.top.next;
     }
 
-    const nextNode = this.top.next;
-    this.top = nextNode;
     this.length--;
-    return returnNode.val;
+    return topNode.val;
   }
 
   peek(): any {

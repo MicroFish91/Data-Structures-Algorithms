@@ -13,3 +13,8 @@ Where stacks are used:
 1. Function invocations
 2. Undo/Redo
 3. Routing History
+   etc.
+
+FOR SLL Implementation -
+O(n):
+Insertion: O(1); Removal: O(1); Searching: O(n), Access: O(n)
