@@ -1,4 +1,4 @@
-class bstNode {
+export class bstNode {
   public val: any;
   public left: bstNode;
   public right: bstNode;
@@ -10,7 +10,7 @@ class bstNode {
   }
 }
 
-class BST {
+export class BST {
   public root: bstNode;
 
   constructor() {
@@ -73,14 +73,3 @@ class BST {
     }
   }
 }
-
-const bst = new BST();
-
-bst.insert(5);
-bst.insert(7);
-bst.insert(3);
-bst.insert(9);
-bst.insert(6);
-bst.insert(10);
-
-console.log(bst.contains(0));

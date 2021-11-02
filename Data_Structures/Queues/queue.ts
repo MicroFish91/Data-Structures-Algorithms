@@ -8,7 +8,7 @@ class QueueElement {
   }
 }
 
-class Queue {
+export class Queue {
   public front: QueueElement;
   public back: QueueElement;
   public length: number;
