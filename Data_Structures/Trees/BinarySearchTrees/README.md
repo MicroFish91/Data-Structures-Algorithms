@@ -26,3 +26,15 @@ Inserting a node into the BST.
     - Check to see if there is a ndoe to the left
       - If there is, move to that node and repeat these steps
       - If there is not, add that node as the left property
+
+## Finding
+
+Similar to Insert
+
+## O(n)
+
+Most of the time:
+
+Insertion - O(log(n)); Searching - O(log(n))
+
+If we get a long one-sided search tree it might be more linear.
