@@ -31,9 +31,11 @@ Inserting a node into the BST.
 
 Similar to Insert
 
-## Breadth-First Search
+## Tree Traversal
 
-![SLL Reverse Visual](https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif)
+![Tree Traversal Methods](https://leetcode.com/articles/Figures/145_transverse.png)
+
+### Breadth-First Search
 
 - Create a queue and a variable to store the values of nodes visited
 - Place the root node in the queue

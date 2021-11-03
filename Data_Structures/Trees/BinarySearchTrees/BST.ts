@@ -91,14 +91,26 @@ class BST {
 
     return bfsResults;
   }
+
+  dfsPreOrder(): any[] {
+    const dfsResults = [];
+    function traverse(node: bstNode) {
+      dfsResults.push(node.val);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return dfsResults;
+  }
 }
 
 const bst = new BST();
 bst.insert(10);
 bst.insert(6);
 bst.insert(15);
+bst.insert(13);
 bst.insert(3);
 bst.insert(8);
 bst.insert(20);
 
-console.log(bst.bfs());
+console.log(bst.dfsPreOrder());
