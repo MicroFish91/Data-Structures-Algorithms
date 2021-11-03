@@ -102,7 +102,33 @@ class BST {
     traverse(this.root);
     return dfsResults;
   }
+
+  dfsInOrder(): any[] {
+    const dfsResults = [];
+    function traverse(node: bstNode) {
+      if (node.left) traverse(node.left);
+      dfsResults.push(node.val);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return dfsResults;
+  }
+
+  dfsPostOrder(): any[] {
+    const dfsResults = [];
+    function traverse(node: bstNode) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      dfsResults.push(node.val);
+    }
+    traverse(this.root);
+    return dfsResults;
+  }
 }
+
+//        10
+//     6     15
+//   3  8  13  20
 
 const bst = new BST();
 bst.insert(10);
@@ -113,4 +139,4 @@ bst.insert(3);
 bst.insert(8);
 bst.insert(20);
 
-console.log(bst.dfsPreOrder());
+console.log(bst.dfsInOrder());
