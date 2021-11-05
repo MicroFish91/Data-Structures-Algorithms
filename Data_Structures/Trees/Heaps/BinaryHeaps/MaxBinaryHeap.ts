@@ -19,14 +19,6 @@ class MaxBinaryHeap {
     return extractedVal;
   }
 
-  // [30, 29, 28, 27, 26, 25] 31
-  //  0   1   2   3   4   5   6
-  insert(val: number): number[] {
-    this.values.push(val);
-    this.bubbleUp();
-    return this.values;
-  }
-
   bubbleDown(idx: number) {
     let childOne, childTwo, childOneIdx, childTwoIdx, currentVal, swapIdx;
 
@@ -73,6 +65,14 @@ class MaxBinaryHeap {
       // Set idx to old swapIdx
       idx = swapIdx;
     }
+  }
+
+  // [30, 29, 28, 27, 26, 25] 31
+  //  0   1   2   3   4   5   6
+  insert(val: number): number[] {
+    this.values.push(val);
+    this.bubbleUp();
+    return this.values;
   }
 
   bubbleUp() {

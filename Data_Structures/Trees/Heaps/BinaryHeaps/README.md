@@ -36,3 +36,13 @@ Process:
   - The child index you swapped to now becomes the new parent index
   - Keep looping and swapping until neither child is larger than the element
   - Return the old root
+
+## Min Binary Heap
+
+See Priority Queue implementation for an example
+
+## Time Complexity
+
+Insertion - O (log n)
+Removal - O (log n)
+Search - O(n)
