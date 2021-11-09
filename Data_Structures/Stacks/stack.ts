@@ -12,7 +12,7 @@ class StackElement {
 // Implementing a stack using SLL
 // Here we use push and pop as basically sub-ins for shift and unshift
 // This is because shift and unshift are O(1) for SLL and O(n) for classic push/pop implementation
-class Stack {
+export class Stack {
   public bottom: StackElement;
   public top: StackElement;
   public length: number;
@@ -21,6 +21,10 @@ class Stack {
     this.top = null;
     this.bottom = null;
     this.length = 0;
+  }
+
+  isEmpty(): boolean {
+    return this.top ? false : true;
   }
 
   push(val: any): number {
@@ -54,6 +58,18 @@ class Stack {
   }
 
   peek(): any {
-    return this.top.val;
+    return this.top?.val;
+  }
+
+  print() {
+    let vals = [];
+    let currentNode = this.top;
+
+    while (currentNode) {
+      vals.push(currentNode.val);
+      currentNode = currentNode.next;
+    }
+
+    console.log(vals);
   }
 }

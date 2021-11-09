@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\out\\Data_Structures\\Trees\\Heaps\\BinaryHeaps\\MaxBinaryHeap.js",
+      "program": "${workspaceFolder}\\out\\Data_Structures\\Stacks\\Problems\\decodeString.js",
       "outFiles": ["${workspaceFolder}/out/**/*.js"]
     }
   ]
