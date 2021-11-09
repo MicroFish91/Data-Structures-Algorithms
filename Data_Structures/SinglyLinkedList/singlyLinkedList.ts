@@ -1,21 +1,6 @@
-// Types
-interface NodeProtoType {
-  val: any;
-  next: NodeProtoType;
-}
-
-interface SinglyLinkedListType {
-  head: NodeProtoType;
-  tail: NodeProtoType;
-  length: number;
-  print(): void;
-}
-
-// Starts here
-
-class NodeProtoType {
+export class sllNode {
   public val: any;
-  public next: NodeProtoType;
+  public next: sllNode;
 
   constructor(val: any) {
     this.val = val;
@@ -24,8 +9,8 @@ class NodeProtoType {
 }
 
 export class SinglyLinkedList {
-  public head: NodeProtoType;
-  public tail: NodeProtoType;
+  public head: sllNode;
+  public tail: sllNode;
   public length: number;
 
   constructor() {
@@ -37,9 +22,9 @@ export class SinglyLinkedList {
   // Description: Place value at end of linked list
   // Input: any value, Output: none or length
   push(val: any): void {
-    const newNode = new NodeProtoType(val);
+    const newNode = new sllNode(val);
 
-    if (this.length === 0) {
+    if (this.head === null) {
       this.head = newNode;
     } else {
       this.tail.next = newNode;
@@ -51,7 +36,7 @@ export class SinglyLinkedList {
 
   // Description pops off the node at the end of the linked list
   // Input: None, Output: Return popped node's value | undefined
-  pop(): NodeProtoType {
+  pop(): sllNode {
     let current = this.head;
     let pre = null;
 
@@ -80,7 +65,7 @@ export class SinglyLinkedList {
 
   // Description: Removes the first node and returns that removed node
   // Input: None, Output: current node at head
-  shift(): NodeProtoType {
+  shift(): sllNode {
     if (this.length === 0) {
       return undefined;
     }
@@ -97,8 +82,8 @@ export class SinglyLinkedList {
 
   // Description: add a value to the front of the linkedList
   // Input: any value, Output: returns the updated linkedList
-  unshift(val: any): SinglyLinkedListType {
-    const newNode = new NodeProtoType(val);
+  unshift(val: any): SinglyLinkedList {
+    const newNode = new sllNode(val);
     const front = this.head;
 
     if (this.length === 0) {
@@ -116,7 +101,7 @@ export class SinglyLinkedList {
 
   // Description: See what node occupies the current index
   // Input: index number, Output: Node
-  get(index: number): NodeProtoType {
+  get(index: number): sllNode {
     let current = this.head;
 
     if (index < 0 || index > this.length - 1) {
@@ -160,7 +145,7 @@ export class SinglyLinkedList {
       return true;
     }
 
-    const newNode = new NodeProtoType(val);
+    const newNode = new sllNode(val);
     const nodeBefore = this.get(index - 1);
     const nodeAfter = nodeBefore.next;
     newNode.next = nodeAfter;
@@ -193,38 +178,16 @@ export class SinglyLinkedList {
     return removed.val;
   }
 
-  // reverse(): SinglyLinkedListType {
-  //   if (this.length === 0) {
-  //     return this;
-  //   }
+  reverse(): SinglyLinkedList {
+    if (this.head === null || this.head === this.tail) return this;
 
-  //   [this.tail, this.head] = [this.head, this.tail];
+    [this.head, this.tail] = [this.tail, this.head];
 
-  //   // Initial conditions
-  //   let current = this.tail;
-  //   let prev = null;
-  //   let next = current.next;
-  //   current.next = prev;
-
-  //   while (next !== null) {
-  //     prev = current;
-  //     current = next;
-  //     next = current.next;
-  //     current.next = prev;
-  //   }
-
-  //   return this;
-  // }
-
-  reverse(): SinglyLinkedListType {
-    [this.tail, this.head] = [this.head, this.tail];
-
-    // Initial conditions
-    let current = this.tail;
     let prev = null;
+    let current = this.tail;
     let next;
 
-    for (let i = 0; i < this.length; i++) {
+    while (next !== null) {
       next = current.next;
       current.next = prev;
       prev = current;
@@ -246,3 +209,10 @@ export class SinglyLinkedList {
     console.log(list);
   }
 }
+
+const sll = new SinglyLinkedList();
+
+sll.push(1);
+sll.push(2);
+
+console.log(sll);
