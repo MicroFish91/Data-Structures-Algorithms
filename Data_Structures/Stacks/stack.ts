@@ -1,5 +1,5 @@
 //@ts-ignore
-class StackElement {
+export class StackElement {
   public val: any;
   public next: StackElement;
 
