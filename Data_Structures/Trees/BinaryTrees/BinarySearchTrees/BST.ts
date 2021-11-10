@@ -1,6 +1,6 @@
 import { Queue } from "../../Queues/queue";
 
-class bstNode {
+export class bstNode {
   public val: any;
   public left: bstNode;
   public right: bstNode;
@@ -12,7 +12,7 @@ class bstNode {
   }
 }
 
-class BST {
+export class BST {
   public root: bstNode;
 
   constructor() {
