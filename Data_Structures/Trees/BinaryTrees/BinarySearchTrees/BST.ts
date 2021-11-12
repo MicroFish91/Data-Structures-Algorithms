@@ -1,4 +1,4 @@
-import { Queue } from "../../Queues/queue";
+import { Queue } from "../../../Queues/queue";
 
 export class bstNode {
   public val: any;
