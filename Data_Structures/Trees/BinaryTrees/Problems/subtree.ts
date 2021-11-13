@@ -24,7 +24,7 @@ function isSubTree(root: treeNode, subRoot: treeNode): boolean {
     }
     same = same && subRoot.val === mainRoot.val;
     if (subRoot?.left || mainRoot?.left)
-      traverseSub(subRoot.left, mainRoot.left);
+      traverseSub(subRoot?.left, mainRoot?.left);
     if (subRoot?.right || mainRoot?.right)
       traverseSub(subRoot?.right, mainRoot?.right);
   }
