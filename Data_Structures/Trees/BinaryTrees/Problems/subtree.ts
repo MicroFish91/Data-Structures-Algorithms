@@ -8,7 +8,8 @@ function isSubTree(root: treeNode, subRoot: treeNode): boolean {
   function traverseMain(root) {
     if (root.val === currentSubroot.val) {
       same = true;
-      isSub = isSub || traverseSub(currentSubroot, root);
+      traverseSub(currentSubroot, root);
+      isSub = isSub || same;
       currentSubroot = subRoot;
     } else {
       if (root?.left) traverseMain(root.left);
@@ -17,13 +18,15 @@ function isSubTree(root: treeNode, subRoot: treeNode): boolean {
   }
 
   function traverseSub(subRoot, mainRoot) {
-    if (!subRoot || !mainRoot) return;
+    if ((!subRoot && mainRoot) || (!mainRoot && subRoot)) {
+      same = false;
+      return;
+    }
     same = same && subRoot.val === mainRoot.val;
-    if (subRoot?.left && mainRoot?.left)
+    if (subRoot?.left || mainRoot?.left)
       traverseSub(subRoot.left, mainRoot.left);
-    if (subRoot?.right && mainRoot?.right)
-      traverseSub(subRoot.right, mainRoot.right);
-    return same;
+    if (subRoot?.right || mainRoot?.right)
+      traverseSub(subRoot?.right, mainRoot?.right);
   }
 
   traverseMain(root);
