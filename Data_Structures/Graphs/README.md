@@ -74,3 +74,13 @@ Typically going to use adjacency list since most data in the real world tends to
 - Visual Hierarchy
 - File System Optimization
 - Modelling the Internet
+
+## Graph Traversal Uses
+
+- Peer to peer networking
+- Web Crawlers
+- Finding closest matches/recommendations
+- Shortest Path Problems
+- GPS Navigation
+- Solving mazes
+- AI (shortest path to win the game)
