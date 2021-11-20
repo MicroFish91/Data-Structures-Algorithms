@@ -22,3 +22,11 @@ Dijkstra's algorithm is an algorithm for finding the shortest paths between node
 - Biology: Used to model the spread of viruses among humans
 - Airline tickets: finds cheapest route to your destination
 - etc.
+
+## Time Complexity
+
+E = # of edges; V = # of vertices
+
+We explore each edge for a given node that we pull from PQ. With an optimized PQ, we take log(n) to enqueue, dequeue.
+
+O(E log(V))
