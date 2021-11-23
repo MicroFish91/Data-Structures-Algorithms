@@ -1,7 +1,7 @@
 import { Queue } from "../Queues/queue";
 
 // Undirected Graph
-class Graph {
+export class Graph {
   public adjacencyList: { [key: string]: any[] };
 
   constructor() {

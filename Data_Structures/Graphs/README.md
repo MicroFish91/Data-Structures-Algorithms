@@ -11,6 +11,62 @@ A graph can be represented in mainly two ways. They are: (1) Adjacency List, (2)
 - Weighted/Unweighted: values assigned to distances between vertices
 - Directed/Undirected: directions assigned to distances between vertices
 
+## Possible ways to model a graph
+
+1. Vertex List + Edge List
+
+- const vertices = ["A", "B", "C", "D", "E"]
+- const edges = [
+  ["A", "B"],
+  ["A", "D"],
+  ["B", "C"],
+  ["C", "D"],
+  ...etc
+  ]
+
+- Time complexity:
+
+  - Find Adjacent Nodes: O(E), we have to loop through whole edges array potentially
+  - Time to check if two nodes are connected: O(E)
+
+- Space complexity: O(V+E)
+
+- isConnected, find adjacent nodes
+
+2. Adjacency Matrix
+
+- const vertices = ["A", "B", "C", "D", "E"]
+- const adjMatrix = [
+  [0, 1, 0, 1, 0],
+  [1, 0, 1, 0, 0],
+  [0, 1, 0, 1, 1,],
+  ...etc
+  ]
+
+- Time Complexity:
+
+  - Find Adjacent Nodes: O(V)
+  - Tow nodes are connected: O(1)
+
+- Space Complexity: O(V^2)
+
+3. Adjacency List
+
+- const vertices = ["A", "B", "C", "D", "E"]
+- const adjList = [
+  ["B", "D"],
+  ["A", "C"],
+  ["B", "D", "E"],
+  ...etc
+  ]
+
+- Time Complexity
+
+  - Find adjacent nodes: O(1)
+  - Check if two nodes are connected: O(log(V)) if each adjacent row is sorted
+
+- Space Complexity: O(E)
+
 ## Adjacency Matrix/Adjacency List
 
 ![Undirected graph](https://media.geeksforgeeks.org/wp-content/uploads/20200609203724/graph.png)
