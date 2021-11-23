@@ -40,24 +40,25 @@ export class Graph {
     this.nodes.push(node);
   }
 
-  bfs(start: GraphNode) {
+  // O(V+E)
+  bfs(start: GraphNode): string[] {
     const bfsResults = [];
     const visited = {};
     const queue = new Queue();
 
     queue.enqueue(start);
     visited[start.val] = true;
-    bfsResults.push(start.val);
 
     while (queue.length) {
       const node = queue.dequeue();
       const adjList = node.edgesList;
 
+      bfsResults.push(node.val);
+
       for (let i = 0; i < adjList.length; i++) {
         const adjNode = adjList[i];
 
         if (!visited[adjNode.val]) {
-          bfsResults.push(adjNode.val);
           visited[adjNode.val] = true;
           queue.enqueue(adjNode);
         }
@@ -106,6 +107,33 @@ export class Graph {
 
     return this.reconstructPath(visitedPath, end);
   }
+
+  dfs(start: GraphNode): string[] {
+    const dfsResults = [];
+    const stack = [];
+    const visited = {};
+
+    stack.push(start);
+    visited[start.val] = true;
+
+    while (stack.length) {
+      const node = stack.pop();
+      const adjList = node.edgesList;
+
+      dfsResults.push(node.val);
+
+      for (let i = 0; i < adjList.length; i++) {
+        const adjNode = adjList[i];
+
+        if (!visited[adjNode.val]) {
+          visited[adjNode.val] = true;
+          stack.push(adjNode);
+        }
+      }
+    }
+
+    return dfsResults;
+  }
 }
 
 const DFW = new GraphNode("DFW");
@@ -133,3 +161,4 @@ PBI.connect(MCO);
 const g = new Graph([DFW, HNL, LAX, EWR, SAN, JFK, BOS, MIA, MCO, PBI]);
 
 console.log(g.bfs(DFW));
+console.log(g.dfs(DFW));
