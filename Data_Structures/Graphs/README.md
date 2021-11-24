@@ -140,3 +140,16 @@ Typically going to use adjacency list since most data in the real world tends to
 - GPS Navigation
 - Solving mazes
 - AI (shortest path to win the game)
+
+## BFS
+
+- Finding shortest path in unweighted graph
+
+## DFS
+
+- Finding cycles in a graph
+- Discover whether a graph is bipartite
+  - A graph whose vertices can be divided into two independent sets such that every edge connects a vertex in the first set to one in the second set
+- Finding a path between two nodes (does the path even exist at all - think of maze)
+- Topological sorting
+  - Where every node in a directed acyclic graph appears before all the nodes it points to

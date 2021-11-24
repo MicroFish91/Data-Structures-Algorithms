@@ -108,30 +108,58 @@ export class Graph {
     return this.reconstructPath(visitedPath, end);
   }
 
-  dfs(start: GraphNode): string[] {
+  // Iterative
+  // dfs(start: GraphNode): string[] {
+  //   const dfsResults = [];
+  //   const stack = [];
+  //   const visited = {};
+
+  //   stack.push(start);
+  //   visited[start.val] = true;
+
+  //   while (stack.length) {
+  //     const node = stack.pop();
+  //     const adjList = node.edgesList;
+
+  //     dfsResults.push(node.val);
+
+  //     for (let i = 0; i < adjList.length; i++) {
+  //       const adjNode = adjList[i];
+
+  //       if (!visited[adjNode.val]) {
+  //         visited[adjNode.val] = true;
+  //         stack.push(adjNode);
+  //       }
+  //     }
+  //   }
+
+  //   return dfsResults;
+  // }
+
+  // Recursive
+  dfs(startNode: GraphNode): string[] {
     const dfsResults = [];
-    const stack = [];
-    const visited = {};
+    const visited = new Set();
 
-    stack.push(start);
-    visited[start.val] = true;
-
-    while (stack.length) {
-      const node = stack.pop();
-      const adjList = node.edgesList;
+    function traverse(node: GraphNode) {
+      if (!node.edgesList.length) return;
 
       dfsResults.push(node.val);
 
-      for (let i = 0; i < adjList.length; i++) {
-        const adjNode = adjList[i];
+      const edgesList = node.edgesList;
 
-        if (!visited[adjNode.val]) {
-          visited[adjNode.val] = true;
-          stack.push(adjNode);
+      for (let i = 0; i < edgesList.length; i++) {
+        const adjNode = edgesList[i];
+
+        if (!visited.has(adjNode)) {
+          visited.add(adjNode);
+          traverse(adjNode);
         }
       }
     }
 
+    visited.add(startNode);
+    traverse(startNode);
     return dfsResults;
   }
 }
@@ -141,6 +169,7 @@ const HNL = new GraphNode("HNL");
 const LAX = new GraphNode("LAX");
 const EWR = new GraphNode("EWR");
 const SAN = new GraphNode("SAN");
+const HKG = new GraphNode("HKG");
 const JFK = new GraphNode("JFK");
 const BOS = new GraphNode("BOS");
 const MIA = new GraphNode("MIA");
@@ -157,8 +186,9 @@ JFK.connect(MIA);
 MIA.connect(MCO);
 MIA.connect(PBI);
 PBI.connect(MCO);
+SAN.connect(HKG);
 
-const g = new Graph([DFW, HNL, LAX, EWR, SAN, JFK, BOS, MIA, MCO, PBI]);
+const g = new Graph([DFW, HNL, LAX, EWR, SAN, HKG, JFK, BOS, MIA, MCO, PBI]);
 
 console.log(g.bfs(DFW));
 console.log(g.dfs(DFW));
