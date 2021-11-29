@@ -37,7 +37,7 @@ function minWindowSubstring(s: string, t: string): string {
         minString = currentString;
       }
 
-      // Can we shorten the string?
+      // Can we shorten the existing string? Move pt1 up until we hit a fail case, record any new mins
       while (true) {
         const letter2 = s[pt1];
 
