@@ -11,24 +11,28 @@ function pacificAtlantic(heights: number[][]) {
   const pacific = [];
   const union = [];
 
+  // O(m * n)
   // Make empty arrays
   for (let i = 0; i < heights.length; i++) {
     atlantic.push(new Array(heights[0].length).fill(0));
     pacific.push(new Array(heights[0].length).fill(0));
   }
 
+  // O(m * traverse)
   // Top and Bottom
   for (let i = 0; i < heights[0].length; i++) {
     traverse(0, i, Number.MIN_SAFE_INTEGER, pacific);
     traverse(heights.length - 1, i, Number.MIN_SAFE_INTEGER, atlantic);
   }
 
+  // O(n * traverse)
   // Left and Right
   for (let i = 0; i < heights.length; i++) {
     traverse(i, 0, Number.MIN_SAFE_INTEGER, pacific);
     traverse(i, heights.length - 1, Number.MIN_SAFE_INTEGER, atlantic);
   }
 
+  // O(m * traverse)
   // Find Union
   for (let i = 0; i < atlantic.length; i++) {
     for (let j = 0; j < atlantic[0].length; j++) {
@@ -61,6 +65,8 @@ function pacificAtlantic(heights: number[][]) {
     return isInRow && isInCol;
   }
 }
+
+// O(m * n)
 
 // [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
 console.log(
