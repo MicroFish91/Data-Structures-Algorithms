@@ -1,4 +1,4 @@
-import { Queue } from "../../../Queues/queue";
+import { Queue } from "../../../../Queues/queue";
 
 export class bstNode {
   public val: any;
@@ -15,8 +15,39 @@ export class bstNode {
 export class BST {
   public root: bstNode;
 
-  constructor() {
-    this.root = null;
+  constructor(arrayMap?: number[]) {
+    this.root = this._arrayToBST(arrayMap);
+  }
+
+  _arrayToBST(integerQueue?: number[]): bstNode {
+    if (!integerQueue?.length) {
+      return null;
+    }
+
+    const treeNodeQueue = [];
+
+    const treeNode = new bstNode(integerQueue.shift());
+    treeNodeQueue.push(treeNode);
+
+    while (integerQueue.length) {
+      const leftVal = integerQueue.length ? integerQueue.shift() : null;
+      const rightVal = integerQueue.length ? integerQueue.shift() : null;
+      const current = treeNodeQueue.shift();
+
+      if (leftVal != null) {
+        const left = new bstNode(leftVal);
+        current.left = left;
+        treeNodeQueue.push(left);
+      }
+
+      if (rightVal != null) {
+        const right = new bstNode(rightVal);
+        current.right = right;
+        treeNodeQueue.push(right);
+      }
+    }
+
+    return treeNode;
   }
 
   insert(val: number): BST {
@@ -140,3 +171,7 @@ bst.insert(8);
 bst.insert(20);
 
 console.log(bst.dfsInOrder());
+
+const testBst = new BST([5, 4, 8, 11, null, 17, 4, 7, null, null, null, 5]);
+
+console.log(testBst);

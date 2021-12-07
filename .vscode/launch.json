@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\out\\Data_Structures\\Stacks\\Problems\\decodeString.js",
+      "program": "${workspaceFolder}\\Data_Structures\\Graphs\\Problems\\test.js",
       "outFiles": ["${workspaceFolder}/out/**/*.js"]
     }
   ]
