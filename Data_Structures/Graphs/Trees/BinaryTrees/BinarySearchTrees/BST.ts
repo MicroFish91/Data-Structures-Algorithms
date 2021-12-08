@@ -171,7 +171,3 @@ bst.insert(8);
 bst.insert(20);
 
 console.log(bst.dfsInOrder());
-
-const testBst = new BST([5, 4, 8, 11, null, 17, 4, 7, null, null, null, 5]);
-
-console.log(testBst);
